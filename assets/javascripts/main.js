@@ -156,7 +156,7 @@ function generateResume() {
             filename: 'myResumeCV-dark.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 4, useCORS: true },
-            jsPDF: { format: 'a4', orientation: 'portrait' }
+            jsPDF: { format: 'a3', orientation: 'portrait' }
         };
         html2pdf(areaCV, opt);
     } else {
@@ -166,7 +166,7 @@ function generateResume() {
             filename: 'myResumeCV-light.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 4, useCORS: true },
-            jsPDF: { format: 'a4', orientation: 'portrait' }
+            jsPDF: { format: 'a3', orientation: 'portrait' }
         };
         html2pdf(areaCV, opt);
     }
