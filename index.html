@@ -436,14 +436,17 @@
                     const entries = bibtex.getEntries();
     
                     const booksList = document.getElementById('books-list');
-                    entries.forEach(entry => {
+                      // Iterate over the keys of the entries object
+                    Object.keys(entries).forEach(key => {
+                        const entry = entries[key];
                         const bookItem = document.createElement('div');
                         bookItem.classList.add('book-item');
                         bookItem.innerHTML = `
                             <h3>${entry.TITLE}</h3>
                             <p><strong>Author:</strong> ${entry.AUTHOR}</p>
-                            <p><strong>Year:</strong> ${entry.YEAR}</p>
+                            <p><strong>Year:</strong> ${entry.DATE}</p>
                             <p><strong>Publisher:</strong> ${entry.PUBLISHER}</p>
+                            <p><strong>ISBN:</strong> ${entry.ISBN}</p>
                         `;
                         booksList.appendChild(bookItem);
                     });
