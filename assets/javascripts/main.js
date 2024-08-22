@@ -164,11 +164,10 @@ function generateResume() {
         },
         jsPDF: {
             unit: 'pt', 
-            format: 'a1', 
+            format: 'a0', 
             orientation: 'portrait',
-            compressPDF: true,
         },
-        pagebreak: { mode: ['css', 'legacy'] }
+        pagebreak: { mode: ['avoid-all','css', 'legacy'] }
     };
 
     html2pdf().from(areaCV).set(opt).save();
