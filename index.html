@@ -17,6 +17,9 @@
         <!-- Import stylesheets in CSS3 -->
         <link rel="stylesheet" href="assets/stylesheets/style.css" type="text/css">
 
+        <!-- Bibtex library -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
+
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="assets/pictures/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/pictures/favicon/favicon-16x16.png">
@@ -315,7 +318,7 @@
  <strong>CABS PROJECT:</strong><br>
  As an external worker for Greencode, a branch of Skoda Auto, I work with EuropenCodeFactory sro on the CABS project. The project involves developing an application called MySkodaDeliver that delivers packages to different vehicles. In this role, I utilize a variety of programming languages including Kotlin, TypeScript, and Python3. I also work with several technologies such as Springboot, CloudFoundry, Kibana, Docker, MySQL, Amazon AWS, GitHub, Jira, Concourse Pipeline, MEGA, ArgoCD, and Kubernetes.
  Overall, my work involves collaborating with a team of developers to deliver high-quality software solutions that meet Skoda Auto's business needs.
- <strong>IBM PROJECT:</strong><br>
+ <br> <strong>IBM PROJECT:</strong><br>
  As part of a project for IBM, I was involved in developing a system called Ciselnik or Catalogue, which catered to the Czech government's needs. The primary objective of the system was to create catalogues with custom tables in a DB2 database using Springboot framework. Throughout the project, we utilized various technologies, including IBM WebSphere Liberty, SpringSearch library, and H2 database for testing purposes.
  One of the significant features of the system was its ability to create tables dynamically, ensuring protection against SQL script injection and facilitating the generation of history tables, sequences, and table cloning functionalities. 
  To ensure efficient and well-documented APIs, we employed Swagger to generate API definitions, creating interfaces that could be easily inherited by application controllers. The entire application was built using Java.
@@ -372,22 +375,34 @@
                         </div>
                     </section>
 
+                    <!-- BOOKS I RECOMMEND -->
+                    <section class="books section" id="books">
+                        <h2 class="section-title">Books I Recommend to Read</h2>
+                        <div class="books_container bd-grid" id="books-list"></div>
+                    </section>
+
                     <!-- INTERESTS -->
                     <section class="interests section" id="interests">
                         <h2 class="section-title">Interests</h2>
                         <div class="interests_container bd-grid">
-<div class="interests_content">
-    <i class="fa-solid fa-code interests_icon"></i>
-    <span class="interests_name">Programming</span>
-</div>
-<div class="interests_content">
-    <i class="fa-solid fa-gamepad interests_icon"></i>
-    <span class="interests_name">Gaming</span>
-</div>
-<div class="interests_content">
-    <i class="fa-solid fa-water interests_icon"></i>
-    <span class="interests_name">Surfing</span>
-</div>
+                            
+                            <div class="interests_content">
+                                <i class="fa-solid fa-code interests_icon"></i>
+                                <span class="interests_name">Programming</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-gamepad interests_icon"></i>
+                                <span class="interests_name">Android development</span>
+                            </div>
+                            <div class="interests_content">
+                                <i class="fa-solid fa-water interests_icon"></i>
+                                <span class="interests_name">Embedded development</span>
+                            </div>
+
+                            <div class="interests_content">
+                                <i class="fa-solid fa-water interests_icon"></i>
+                                <span class="interests_name">Artificial Intelligence</span>
+                            </div>
 
                         </div>
                     </section>
@@ -408,6 +423,40 @@
 
         <!-- Main Javascript file -->
         <script src="assets/javascripts/main.js"></script>
+
+        <script>
+        // Function to load and display BibTeX entries
+        function displayBibTeX(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    const bibtex = new BibtexParser();
+                    bibtex.setInput(data);
+                    bibtex.bibtex();
+                    const entries = bibtex.getEntries();
+    
+                    const booksList = document.getElementById('books-list');
+                    entries.forEach(entry => {
+                        const bookItem = document.createElement('div');
+                        bookItem.classList.add('book-item');
+                        bookItem.innerHTML = `
+                            <h3>${entry.TITLE}</h3>
+                            <p><strong>Author:</strong> ${entry.AUTHOR}</p>
+                            <p><strong>Year:</strong> ${entry.YEAR}</p>
+                            <p><strong>Publisher:</strong> ${entry.PUBLISHER}</p>
+                        `;
+                        booksList.appendChild(bookItem);
+                    });
+                })
+                .catch(error => console.error('Error loading BibTeX file:', error));
+        }
+    
+        // Load the BibTeX file on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            displayBibTeX('assets/bibtex/export-data.bib');
+        });
+</script>
+        
     </body>
 
 </html>
