@@ -683,6 +683,10 @@ img {
         margin: 3rem 0;
     }
 
+       .page-break {
+        page-break-before: always;
+    }
+
     .bd-container {
         margin-left: auto;
         margin-right: auto;
