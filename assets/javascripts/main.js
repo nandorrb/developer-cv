@@ -168,7 +168,7 @@ function generateResume() {
             orientation: 'portrait',
             compressPDF: true,
         },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        pagebreak: { mode: ['css', 'legacy'] }
     };
 
     html2pdf().from(areaCV).set(opt).save();
