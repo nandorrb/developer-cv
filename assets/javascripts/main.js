@@ -157,14 +157,14 @@ function generateResume() {
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
-            scale: 4, 
+            scale: 5, 
             useCORS: true,
             scrollX: 0,
             scrollY: 0
         },
         jsPDF: {
             unit: 'pt', 
-            format: 'a4', 
+            format: 'a3', 
             orientation: 'portrait',
             compressPDF: true,
         },
