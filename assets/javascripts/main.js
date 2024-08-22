@@ -153,7 +153,7 @@ function generateResume() {
 
     // html2pdf.js options for a continuous PDF without page breaks
     let opt = {
-        margin: [0.3, 0, 0, 0],
+        margin: [0.2, 0, 0.2, 0],
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
@@ -164,7 +164,7 @@ function generateResume() {
         },
         jsPDF: {
             unit: 'in',
-            format: [8.5, 11.9],
+            format: [8.5, 12],
             orientation: 'portrait',
         },
 
@@ -173,8 +173,24 @@ function generateResume() {
             threshold: 1000, // break after 1000 pixels
         },
     };
-
-    html2pdf().from(areaCV).set(opt).save();
+//--------------------- save PDF ---------------------------------------//
+    // html2pdf().from(areaCV).set(opt).save();
+//--------------------- only show --------------------------------------//
+    html2pdf().from(areaCV).set(opt).toPdf().get('pdf').then(function (pdf) {
+        // Create a Blob from the PDF
+        const blob = pdf.output('blob');
+        
+        // Create an object URL for the Blob
+        const url = URL.createObjectURL(blob);
+        
+        // Open the PDF in a new tab
+        window.open(url);
+        
+        // Optional: Clean up and revoke the object URL after some time
+        setTimeout(function () {
+            URL.revokeObjectURL(url);
+        }, 1000);
+    });
 }
 
 // Action executed by clicking on the button => generation of the final PDF CV CV
