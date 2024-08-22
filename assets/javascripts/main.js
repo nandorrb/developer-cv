@@ -147,27 +147,31 @@ let areaCV = document.getElementById('area-cv');
 let resumeButton = document.getElementById("resume-button");
 
 function generateResume() {
-    let filename = document.body.classList.contains(darkTheme) 
-        ? 'myResumeCV-dark.pdf' 
+    let filename = document.body.classList.contains(darkTheme)
+        ? 'myResumeCV-dark.pdf'
         : 'myResumeCV-light.pdf';
 
     // html2pdf.js options for a continuous PDF without page breaks
     let opt = {
-        margin: 0,
+        margin: [0.3, 0, 0, 0],
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-            scale: 5, 
+        html2canvas: {
+            scale: 5,
             useCORS: true,
             scrollX: 0,
             scrollY: 0
         },
         jsPDF: {
-            unit: 'pt', 
-            format: 'a0', 
+            unit: 'in',
+            format: [8.5, 11.9],
             orientation: 'portrait',
         },
-        pagebreak: { mode: ['avoid-all','css', 'legacy'] }
+
+        pageBreak: {
+            mode: 'avoid',
+            threshold: 1000, // break after 1000 pixels
+        },
     };
 
     html2pdf().from(areaCV).set(opt).save();
@@ -175,10 +179,5 @@ function generateResume() {
 
 // Action executed by clicking on the button => generation of the final PDF CV CV
 resumeButton.addEventListener("click", () => {
-    // Adapt the area of the PDF
-    addScaleCV();
-    // Generate the PDF
     generateResume();
-    // Remove adaptation after 1 second (you can choose to set more than 1 second if your PDF download time is long)
-    setTimeout(removeScaleCV, 1000);
 });

@@ -510,40 +510,40 @@
         <script src="assets/javascripts/main.js"></script>
 
         <script>
-        // Function to load and display BibTeX entries
-        function displayBibTeX(file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    const bibtex = new BibtexParser();
-                    bibtex.setInput(data);
-                    bibtex.bibtex();
-                    const entries = bibtex.getEntries();
-    
-                    const booksList = document.getElementById('books-list');
-                      // Iterate over the keys of the entries object
-                    Object.keys(entries).forEach(key => {
-                        const entry = entries[key];
-                        const bookItem = document.createElement('div');
-                        bookItem.classList.add('book-item');
-                        bookItem.innerHTML = `
-                            <h3>${entry.TITLE}</h3>
-                            <p><strong>Author:</strong> ${entry.AUTHOR}</p>
-                            <p><strong>Year:</strong> ${entry.DATE}</p>
-                            <p><strong>Publisher:</strong> ${entry.PUBLISHER}</p>
-                            <p><strong>ISBN:</strong> ${entry.ISBN}</p>
-                        `;
-                        booksList.appendChild(bookItem);
-                    });
-                })
-                .catch(error => console.error('Error loading BibTeX file:', error));
-        }
-    
-        // Load the BibTeX file on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            displayBibTeX('assets/bibtex/export-data.bib');
-        });
-</script>
+            // Function to load and display BibTeX entries
+            function displayBibTeX(file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        const bibtex = new BibtexParser();
+                        bibtex.setInput(data);
+                        bibtex.bibtex();
+                        const entries = bibtex.getEntries();
+        
+                        const booksList = document.getElementById('books-list');
+                        // Iterate over the keys of the entries object
+                        Object.keys(entries).forEach(key => {
+                            const entry = entries[key];
+                            const bookItem = document.createElement('div');
+                            bookItem.classList.add('book-item');
+                            bookItem.innerHTML = `
+                                <h3>${entry.TITLE}</h3>
+                                <p><strong>Author:</strong> ${entry.AUTHOR}</p>
+                                <p><strong>Year:</strong> ${entry.DATE}</p>
+                                <p><strong>Publisher:</strong> ${entry.PUBLISHER}</p>
+                                <p><strong>ISBN:</strong> ${entry.ISBN}</p>
+                            `;
+                            booksList.appendChild(bookItem);
+                        });
+                    })
+                    .catch(error => console.error('Error loading BibTeX file:', error));
+            }
+        
+            // Load the BibTeX file on page load
+            document.addEventListener('DOMContentLoaded', function () {
+                displayBibTeX('assets/bibtex/export-data.bib');
+            });
+        </script>
         
     </body>
 
