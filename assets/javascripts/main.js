@@ -164,7 +164,7 @@ function generateResume() {
         },
         jsPDF: {
             unit: 'pt', 
-            format: 'a3', 
+            format: 'a1', 
             orientation: 'portrait',
             compressPDF: true,
         },
