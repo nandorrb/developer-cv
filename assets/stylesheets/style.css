@@ -38,6 +38,14 @@
     --z-fixed: 100;
 }
 
+/* Remove any page-break styles */
+* {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+
+
 /* Base */
 
 *,
