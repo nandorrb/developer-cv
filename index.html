@@ -26,6 +26,24 @@
         <link rel="icon" type="image/png" sizes="32x32" href="assets/pictures/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="192x192" href="assets/pictures/favicon/android-chrome-192x192.png">
         <link rel="icon" type="image/png" sizes="512x512" href="assets/pictures/favicon/android-chrome-512x512.png">
+        <style>
+            .page {
+                width: 100%;
+                display: grid;
+                grid-template-columns: .5fr 1fr;
+            }
+    
+            .pagebreak {
+                height: 0;
+                margin: 0;
+                padding: 0;
+                page-break-after: always; /* After this element, start a new page */
+            }
+            #area-cv {
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
     </head>
 
     <body>
@@ -96,403 +114,417 @@
         <main class="l-main bd-container">
             <!-- Resume CV -->
             <div class="resume" id="area-cv">
-                <div class="resume_left">
+                <div class="page">
+                    <div class="resume_left">
 
-                    <!-- HOME -->
-                    <section class="home" id="home">
-                        <div class="home_container section bd-grid">
-
-                            <div class="home_data bd-grid">
-                                <img src="assets/pictures/profile.png" alt="Icon picture" class="home_img" id="home-img">
-                                <!--<img alt="Icon picture" class="home_img" id="home-img">-->
-                                <h1 class="home_title">FERNANDO <b>RUBIO</b></h1>
-                                <h3 class="home_profession">Software developer</h3>
-                                <div>
-                                    <a download="" id="download-button" class="home_button-movil">Download</a>
-                                </div>
-                            </div>
-
-                            <div class="home_address bd-grid">
-                                <span class="home_information">
-                                    <i class="fa-solid fa-location-dot home_icon"></i> Prague - Czech Republic
-                                </span>
-                                <span class="home_information">
-                                    <a href="mailto:nando.rrb.00@gmail.com" class="home_link">
-                                        <i class="fa-solid fa-envelope home_icon"></i> nando.rrb.00@gmail.com
-                                    </a>
-                                </span>
-                                <span class="home_information">
-                                    <a href="tel:+420608XXXXXX" class="home_link">
-                                        <i class="fa-solid fa-phone home_icon"></i> +420 608 XXX XXX
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Theme change button -->
-                        <i class="fa-solid fa-moon change-theme" title="Theme" id="theme-button"></i>
-
-                        <!-- Button to generate and download the pdf. Available for desktop. -->
-                        <i class="fa-solid fa-download generate-pdf" title="Generate PDF" id="resume-button"></i>
-
-                    </section>
-
-                    <!-- SOCIAL -->
-                    <section class="social section">
-                        <h2 class="section-title">Social</h2>
-
-                        <div class="social_container bd-grid">
-                            <a href="https://github.com/nandorrb" target="_blank" class="social_link">
-                                <i class="fa-brands fa-github social_icon"></i> @nandorrb
-                            </a>
-          
-                            <a href="https://www.linkedin.com/in/fernando-rubio/" target="_blank" class="social_link">
-                                <i class="fa-brands fa-linkedin social_icon"></i> fernando-rubio
-                            </a>
-                        </div>
-                    </section>
-
-                    <!-- PROFILE -->
-                    <section class="profile section" id="profile">
-                        <h2 class="section-title">Profile</h2>
-
-                        <p class="profile_description">
-                            I am a software engineer with experience at leading Czech companies such as Skoda Auto, European Code Factory, and Greencode, I have experience in programming languages including C, C++, C#, Python, Java, and Kotlin. However my favourite languages are Kotlin, Java and Python.
-                        </p>
-                    </section>
-
-                    <!-- SKILLS  -->
-                    <section class="skills section" id="skills">
-                        <h2 class="section-title">Skills</h2>
-                        <div class="skills_container">
-                    
-                            <!-- Programming Languages -->
-                            <div class="skills_group">
-                                <h3 class="skills_group-title">Programming Languages</h3>
-                                <div class="skills_content bd-grid">
-                                    <div class="skills_name">
-                                        <span class="skills_text">Kotlin</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 90%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Java</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 90%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Python</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 90%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">C++</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 30%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">C#</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 30%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Javascript</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 80%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Typescript</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 80%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Matlab</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 80%;"></span>
-                                        </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Octave</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 80%;"></span>
-                                        </div>
+                        <!-- HOME -->
+                        <section class="home" id="home">
+                            <div class="home_container section bd-grid">
+    
+                                <div class="home_data bd-grid">
+                                    <img src="assets/pictures/profile.png" alt="Icon picture" class="home_img" id="home-img">
+                                    <!--<img alt="Icon picture" class="home_img" id="home-img">-->
+                                    <h1 class="home_title">FERNANDO <b>RUBIO</b></h1>
+                                    <h3 class="home_profession">Software developer</h3>
+                                    <div>
+                                        <a download="" id="download-button" class="home_button-movil">Download</a>
                                     </div>
                                 </div>
+    
+                                <div class="home_address bd-grid">
+                                    <span class="home_information">
+                                        <i class="fa-solid fa-location-dot home_icon"></i> Prague - Czech Republic
+                                    </span>
+                                    <span class="home_information">
+                                        <a href="mailto:nando.rrb.00@gmail.com" class="home_link">
+                                            <i class="fa-solid fa-envelope home_icon"></i> nando.rrb.00@gmail.com
+                                        </a>
+                                    </span>
+                                    <span class="home_information">
+                                        <a href="tel:+420608XXXXXX" class="home_link">
+                                            <i class="fa-solid fa-phone home_icon"></i> +420 608 XXX XXX
+                                        </a>
+                                    </span>
+                                </div>
                             </div>
-                            <br>
-                    
-                            <!-- Mobile & Embedded Development -->
-                            <div class="skills_group">
-                                <h3 class="skills_group-title">Mobile & Embedded Development</h3>
-                                <div class="skills_content bd-grid">
-                                    <div class="skills_name">
-                                        <span class="skills_text">Android</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 90%;"></span>
+    
+                            <!-- Theme change button -->
+                            <i class="fa-solid fa-moon change-theme" title="Theme" id="theme-button"></i>
+    
+                            <!-- Button to generate and download the pdf. Available for desktop. -->
+                            <i class="fa-solid fa-download generate-pdf" title="Generate PDF" id="resume-button"></i>
+    
+                        </section>
+    
+                        <!-- SOCIAL -->
+                        <section class="social section">
+                            <h2 class="section-title">Social</h2>
+    
+                            <div class="social_container bd-grid">
+                                <a href="https://github.com/nandorrb" target="_blank" class="social_link">
+                                    <i class="fa-brands fa-github social_icon"></i> @nandorrb
+                                </a>
+              
+                                <a href="https://www.linkedin.com/in/fernando-rubio/" target="_blank" class="social_link">
+                                    <i class="fa-brands fa-linkedin social_icon"></i> fernando-rubio
+                                </a>
+                            </div>
+                        </section>
+    
+                        <!-- PROFILE -->
+                        <section class="profile section" id="profile">
+                            <h2 class="section-title">Profile</h2>
+    
+                            <p class="profile_description">
+                                I am a software engineer with experience at leading Czech companies such as Skoda Auto, European Code Factory, and Greencode, I have experience in programming languages including C, C++, C#, Python, Java, and Kotlin. However my favourite languages are Kotlin, Java and Python.
+                            </p>
+                        </section>
+    
+                        <!-- SKILLS  -->
+                        <section class="skills section" id="skills">
+                            <h2 class="section-title">Skills</h2>
+                            <div class="skills_container">
+                        
+                                <!-- Programming Languages -->
+                                <div class="skills_group">
+                                    <h3 class="skills_group-title">Programming Languages</h3>
+                                    <div class="skills_content bd-grid">
+                                        <div class="skills_name">
+                                            <span class="skills_text">Kotlin</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 90%;"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Embedded Development</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 70%;"></span>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Java</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 90%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Python</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 90%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">C++</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 30%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">C#</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 30%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Javascript</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Typescript</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Matlab</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 80%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Octave</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 80%;"></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                            <!-- Databases -->
-                            <div class="skills_group">
-                                <h3 class="skills_group-title">Databases</h3>
-                                <div class="skills_content bd-grid">
-                                    <div class="skills_name">
-                                        <span class="skills_text">SQL</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 100%;"></span>
-                                        </div>
+                        </section>
+    
+                    </div>
+    
+                    <div class="resume_right">
+    
+                        <!-- EXPERIENCE -->
+                        <section class="experience section" id="experience">
+                            <h2 class="section-title">Experience</h2>
+    
+                            <div class="experience_container bd-grid">
+                                <div class="experience_content">
+                                    <div class="experience_time">
+                                        <span class="experience_rounder"></span>
+                                        <span class="experience_line"></span>
                                     </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">MySQL</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 90%;"></span>
-                                        </div>
+                                    <div class="experience_data bd-grid">
+                                        <h3 class="experience_title"> Kotlin Software Engineer</h3>
+                                        <span class="experience_company"> European Code Factory s.r.o. - Prague</span>
+                                        <span class="experience_year">  August 2020 - July 2023 (3 years) </span>
+                                        <p class="experience_description">
+                                             <strong>CABS PROJECT:</strong><br>
+                                             As an external worker for Greencode, a branch of Skoda Auto, I work with EuropenCodeFactory sro on the CABS project. The project involves developing an application called MySkodaDeliver that delivers packages to different vehicles. In this role, I utilize a variety of programming languages including Kotlin, TypeScript, and Python3. I also work with several technologies such as Springboot, CloudFoundry, Kibana, Docker, MySQL, Amazon AWS, GitHub, Jira, Concourse Pipeline, MEGA, ArgoCD, and Kubernetes.
+                                             Overall, my work involves collaborating with a team of developers to deliver high-quality software solutions that meet Skoda Auto's business needs.
+                                             <br> <strong>IBM PROJECT:</strong><br>
+                                             As part of a project for IBM, I was involved in developing a system called Ciselnik or Catalogue, which catered to the Czech government's needs. The primary objective of the system was to create catalogues with custom tables in a DB2 database using Springboot framework. Throughout the project, we utilized various technologies, including IBM WebSphere Liberty, SpringSearch library, and H2 database for testing purposes.
+                                             One of the significant features of the system was its ability to create tables dynamically, ensuring protection against SQL script injection and facilitating the generation of history tables, sequences, and table cloning functionalities. 
+                                             To ensure efficient and well-documented APIs, we employed Swagger to generate API definitions, creating interfaces that could be easily inherited by application controllers. The entire application was built using Java.
+                                        </p>                                                               
                                     </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">MongoDB</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 50%;"></span>
-                                        </div>
+                                </div>
+    
+                        </section>
+    
+                        <!-- CERTIFICATES -->
+                        <section class="certificate section" id="certificates">
+                            <h2 class="section-title">Certificates</h2>
+    
+                            <div class="certificate_container bd-grid">
+                                <div class="certificate_content">
+                                    <div class="certificate_item">
+                                        <span class="certificate_rounder"></span>
+                                    </div>
+                                    <div class="certificate_data bd-grid">
+                                        <h3 class="certificate_year">2024</h3>
+                                        <span class="certificate_title">Data Structures and Algorithms: Deep dive using Java</span>
                                     </div>
                                 </div>
                             </div>
-                            <br>
-                    
-                            <!-- Tools -->
-                            <div class="skills_group">
-                                <h3 class="skills_group-title">Tools & Technologies</h3>
-                                <div class="skills_content bd-grid">
-                                    <div class="skills_name">
-                                        <span class="skills_text">Git</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 100%;"></span>
-                                        </div>
+                        </section>
+    
+                        <!-- EDUCATION -->
+                        <section class="education section" id="education">
+                            <h2 class="section-title">Education</h2>
+    
+                            <div class="education_container bd-grid">
+                                <div class="education_content">
+                                    <div class="education_time">
+                                        <span class="education_rounder"></span>
+                                        <span class="education_line"></span>
                                     </div>
-                                    <div class="skills_name">
-                                        <span class="skills_text">Linux</span>
-                                        <div class="skills_box">
-                                            <span class="skills_progress" style="width: 70%;"></span>
-                                        </div>
+                                    <div class="education_data bd-grid">
+                                        <h3 class="education_title">Master in Machines and Equipment Design</h3>
+                                        <span class="education_studies">Techhnical University of Liberec - Czech Republic</span>
+                                        <span class="education_year">2018 - 2020</span>
+                                    </div>
+                                </div>
+                                <div class="education_content">
+                                    <div class="education_time">
+                                        <span class="education_rounder"></span>
+                                        <span class="education_line"></span>
+                                    </div>
+                                    <div class="education_data bd-grid">
+                                        <h3 class="education_title">Mechatronics Engineering</h3>
+                                        <span class="education_studies">National University of Engineering - Peru</span>
+                                        <span class="education_year">2010 - 2015</span>
                                     </div>
                                 </div>
                             </div>
-                    
-                        </div>
-                    </section>
+                        </section>
 
-
-                    <!-- LANGUAGES -->
-                    <section class="languages section" id="languages">
-                        <h2 class="section-title">Languages</h2>
-
-                        <div class="languages_container">
-                            <ul class="languages_content bd-grid">
-                                <li class="languages_name">
-                                    <span class="languages_text">Spanish</span>
-                                         <div class="skills_box">
-                                            <span class="skills_progress" style="width: 100%;"></span>
-                                         </div>
-                                </li>
-                                <li class="languages_name">
-                                    <span class="languages_text">English</span>
-                                         <div class="skills_box">
-                                            <span class="skills_progress" style="width: 100%;"></span>
-                                         </div>
-                                </li>
-                                <li class="languages_name">
-                                    <span class="languages_text">Czech</span>
-                                         <div class="skills_box">
-                                            <span class="skills_progress" style="width: 20%;"></span>
-                                         </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-
+                        <section class="interests section" id="programming-skills">
+                            <h2 class="section-title">Programming Skills</h2>
+                            <div class="interests_container bd-grid">
+                        
+                                <!-- Algorithms -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-code interests_icon"></i>
+                                    <span class="interests_name">Algorithms</span>
+                                </div>
+                        
+                                <!-- Architecture -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-drafting-compass interests_icon"></i>
+                                    <span class="interests_name">Architecture</span>
+                                </div>
+                        
+                                <!-- Testing -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-vial interests_icon"></i>
+                                    <span class="interests_name">Testing, Unit Testing, Line Testing</span>
+                                </div>
+                        
+                                <!-- Multithreading -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-microchip interests_icon"></i>
+                                    <span class="interests_name">Multithreading, Coroutines, Kotlin Flow</span>
+                                </div>
+                        
+                                <!-- Data Structures -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-brain interests_icon"></i>
+                                    <span class="interests_name">Data Structures</span>
+                                </div>
+                        
+                                <!-- API Design -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-diagram-project interests_icon"></i>
+                                    <span class="interests_name">API Design</span>
+                                </div>
+                        
+                                <!-- UML -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-project-diagram interests_icon"></i>
+                                    <span class="interests_name">UML</span>
+                                </div>
+                        
+                                <!-- Encapsulation -->
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-shield-alt interests_icon"></i>
+                                    <span class="interests_name">Encapsulation</span>
+                                </div>
+                        
+                            </div>
+                        </section>
+                    </div>
                 </div>
-
-                <div class="resume_right">
-
-                    <!-- EXPERIENCE -->
-                    <section class="experience section" id="experience">
-                        <h2 class="section-title">Experience</h2>
-
-                        <div class="experience_container bd-grid">
-                            <div class="experience_content">
-                                <div class="experience_time">
-                                    <span class="experience_rounder"></span>
-                                    <span class="experience_line"></span>
+                <div class="pagebreak"></div>
+                <div class="page">
+                    <div class="resume_left">
+    
+                        <!-- SKILLS  -->
+                        <section class="skills section" id="skills">
+                            <div class="skills_container">
+                                <!-- Mobile & Embedded Development -->
+                                <div class="skills_group">
+                                    <h3 class="skills_group-title">Mobile & Embedded Development</h3>
+                                    <div class="skills_content bd-grid">
+                                        <div class="skills_name">
+                                            <span class="skills_text">Android</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 90%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Embedded Development</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 70%;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="experience_data bd-grid">
-                                    <h3 class="experience_title"> Kotlin Software Engineer</h3>
-                                    <span class="experience_company"> European Code Factory s.r.o. - Prague</span>
-                                    <span class="experience_year">  August 2020 - July 2023 (3 years) </span>
-                                    <p class="experience_description">
-                                         <strong>CABS PROJECT:</strong><br>
-                                         As an external worker for Greencode, a branch of Skoda Auto, I work with EuropenCodeFactory sro on the CABS project. The project involves developing an application called MySkodaDeliver that delivers packages to different vehicles. In this role, I utilize a variety of programming languages including Kotlin, TypeScript, and Python3. I also work with several technologies such as Springboot, CloudFoundry, Kibana, Docker, MySQL, Amazon AWS, GitHub, Jira, Concourse Pipeline, MEGA, ArgoCD, and Kubernetes.
-                                         Overall, my work involves collaborating with a team of developers to deliver high-quality software solutions that meet Skoda Auto's business needs.
-                                         <br> <strong>IBM PROJECT:</strong><br>
-                                         As part of a project for IBM, I was involved in developing a system called Ciselnik or Catalogue, which catered to the Czech government's needs. The primary objective of the system was to create catalogues with custom tables in a DB2 database using Springboot framework. Throughout the project, we utilized various technologies, including IBM WebSphere Liberty, SpringSearch library, and H2 database for testing purposes.
-                                         One of the significant features of the system was its ability to create tables dynamically, ensuring protection against SQL script injection and facilitating the generation of history tables, sequences, and table cloning functionalities. 
-                                         To ensure efficient and well-documented APIs, we employed Swagger to generate API definitions, creating interfaces that could be easily inherited by application controllers. The entire application was built using Java.
-                                    </p>                                                               
+                                <br>
+                                <!-- Databases -->
+                                <div class="skills_group">
+                                    <h3 class="skills_group-title">Databases</h3>
+                                    <div class="skills_content bd-grid">
+                                        <div class="skills_name">
+                                            <span class="skills_text">SQL</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">MySQL</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 90%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">MongoDB</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 50%;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                    </section>
-
-                    <!-- CERTIFICATES -->
-                    <section class="certificate section" id="certificates">
-                        <h2 class="section-title">Certificates</h2>
-
-                        <div class="certificate_container bd-grid">
-                            <div class="certificate_content">
-                                <div class="certificate_item">
-                                    <span class="certificate_rounder"></span>
+                                <br>
+                        
+                                <!-- Tools -->
+                                <div class="skills_group">
+                                    <h3 class="skills_group-title">Tools & Technologies</h3>
+                                    <div class="skills_content bd-grid">
+                                        <div class="skills_name">
+                                            <span class="skills_text">Git</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 100%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="skills_name">
+                                            <span class="skills_text">Linux</span>
+                                            <div class="skills_box">
+                                                <span class="skills_progress" style="width: 70%;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="certificate_data bd-grid">
-                                    <h3 class="certificate_year">2024</h3>
-                                    <span class="certificate_title">Data Structures and Algorithms: Deep dive using Java</span>
+                        
+                            </div>
+                        </section>
+    
+    
+                        <!-- LANGUAGES -->
+                        <section class="languages section" id="languages">
+                            <h2 class="section-title">Languages</h2>
+    
+                            <div class="languages_container">
+                                <ul class="languages_content bd-grid">
+                                    <li class="languages_name">
+                                        <span class="languages_text">Spanish</span>
+                                             <div class="skills_box">
+                                                <span class="skills_progress" style="width: 100%;"></span>
+                                             </div>
+                                    </li>
+                                    <li class="languages_name">
+                                        <span class="languages_text">English</span>
+                                             <div class="skills_box">
+                                                <span class="skills_progress" style="width: 100%;"></span>
+                                             </div>
+                                    </li>
+                                    <li class="languages_name">
+                                        <span class="languages_text">Czech</span>
+                                             <div class="skills_box">
+                                                <span class="skills_progress" style="width: 20%;"></span>
+                                             </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+    
+                    </div>
+    
+                    <div class="resume_right">
+
+                        <!-- BOOKS I RECOMMEND -->
+                        <section class="books section" id="books">
+                            <h2 class="section-title">Books I Recommend to Read</h2>
+                            <div class="books_container bd-grid" id="books-list"></div>
+                        </section>
+    
+                        <!-- INTERESTS -->
+                        <section class="interests section" id="interests">
+                            <h2 class="section-title">Interests</h2>
+                            <div class="interests_container bd-grid">
+                                
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-code interests_icon"></i>
+                                    <span class="interests_name">Programming</span>
                                 </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- EDUCATION -->
-                    <section class="education section" id="education">
-                        <h2 class="section-title">Education</h2>
-
-                        <div class="education_container bd-grid">
-                            <div class="education_content">
-                                <div class="education_time">
-                                    <span class="education_rounder"></span>
-                                    <span class="education_line"></span>
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-mobile interests_icon"></i>
+                                    <span class="interests_name">Android Development</span>
                                 </div>
-                                <div class="education_data bd-grid">
-                                    <h3 class="education_title">Master in Machines and Equipment Design</h3>
-                                    <span class="education_studies">Techhnical University of Liberec - Czech Republic</span>
-                                    <span class="education_year">2018 - 2020</span>
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-microchip interests_icon"></i>
+                                    <span class="interests_name">Embedded Development</span>
                                 </div>
-                            </div>
-                            <div class="education_content">
-                                <div class="education_time">
-                                    <span class="education_rounder"></span>
-                                    <span class="education_line"></span>
+                                <div class="interests_content">
+                                    <i class="fa-solid fa-brain interests_icon"></i>
+                                    <span class="interests_name">Artificial Intelligence</span>
                                 </div>
-                                <div class="education_data bd-grid">
-                                    <h3 class="education_title">Mechatronics Engineering</h3>
-                                    <span class="education_studies">National University of Engineering - Peru</span>
-                                    <span class="education_year">2010 - 2015</span>
-                                </div>
+                        
                             </div>
-                        </div>
-                    </section>
-
-                    <!-- PROGRAMMING SKILLS -->
-                    <section class="interests section" id="programming-skills">
-                        <h2 class="section-title">Programming Skills</h2>
-                        <div class="interests_container bd-grid">
-                    
-                            <!-- Algorithms -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-code interests_icon"></i>
-                                <span class="interests_name">Algorithms</span>
-                            </div>
-                    
-                            <!-- Architecture -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-drafting-compass interests_icon"></i>
-                                <span class="interests_name">Architecture</span>
-                            </div>
-                    
-                            <!-- Testing -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-vial interests_icon"></i>
-                                <span class="interests_name">Testing, Unit Testing, Line Testing</span>
-                            </div>
-                    
-                            <!-- Multithreading -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-microchip interests_icon"></i>
-                                <span class="interests_name">Multithreading, Coroutines, Kotlin Flow</span>
-                            </div>
-                    
-                            <!-- Data Structures -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-brain interests_icon"></i>
-                                <span class="interests_name">Data Structures</span>
-                            </div>
-                    
-                            <!-- API Design -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-diagram-project interests_icon"></i>
-                                <span class="interests_name">API Design</span>
-                            </div>
-                    
-                            <!-- UML -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-project-diagram interests_icon"></i>
-                                <span class="interests_name">UML</span>
-                            </div>
-                    
-                            <!-- Encapsulation -->
-                            <div class="interests_content">
-                                <i class="fa-solid fa-shield-alt interests_icon"></i>
-                                <span class="interests_name">Encapsulation</span>
-                            </div>
-                    
-                        </div>
-                    </section>
-
-
-                    <!-- BOOKS I RECOMMEND -->
-                    <section class="books section" id="books">
-                        <h2 class="section-title">Books I Recommend to Read</h2>
-                        <div class="books_container bd-grid" id="books-list"></div>
-                    </section>
-
-                    <!-- INTERESTS -->
-                    <section class="interests section" id="interests">
-                        <h2 class="section-title">Interests</h2>
-                        <div class="interests_container bd-grid">
-                            
-                            <div class="interests_content">
-                                <i class="fa-solid fa-code interests_icon"></i>
-                                <span class="interests_name">Programming</span>
-                            </div>
-                            <div class="interests_content">
-                                <i class="fa-solid fa-mobile interests_icon"></i>
-                                <span class="interests_name">Android Development</span>
-                            </div>
-                            <div class="interests_content">
-                                <i class="fa-solid fa-microchip interests_icon"></i>
-                                <span class="interests_name">Embedded Development</span>
-                            </div>
-                            <div class="interests_content">
-                                <i class="fa-solid fa-brain interests_icon"></i>
-                                <span class="interests_name">Artificial Intelligence</span>
-                            </div>
-                    
-                        </div>
-                    </section>
-
-
+                        </section>
+    
+    
+                    </div>
                 </div>
+               
             </div>
         </main>
 

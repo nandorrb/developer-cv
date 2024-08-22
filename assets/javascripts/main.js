@@ -153,7 +153,7 @@ function generateResume() {
 
     // html2pdf.js options for a continuous PDF without page breaks
     let opt = {
-        margin: [0.2, 0, 0.2, 0],
+        margin: [0, 0, 0, 0],
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
@@ -164,13 +164,13 @@ function generateResume() {
         },
         jsPDF: {
             unit: 'in',
-            format: [8.5, 12],
+            format: [8.5, 16],
             orientation: 'portrait',
         },
 
         pageBreak: {
             mode: 'avoid',
-            threshold: 1000, // break after 1000 pixels
+            threshold: 10, // break after 1000 pixels
         },
     };
 //--------------------- save PDF ---------------------------------------//
