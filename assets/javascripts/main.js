@@ -146,30 +146,32 @@ let areaCV = document.getElementById('area-cv');
 // Button
 let resumeButton = document.getElementById("resume-button");
 
-// Generate PDF with html2pdf.js
 function generateResume() {
-    // PDF filename change depending of the light/dark mode
-    if (document.body.classList.contains(darkTheme)) {
-        // html2pdf.js options
-        let opt = {
-            margin: 0,
-            filename: 'myResumeCV-dark.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 4, useCORS: true },
-            jsPDF: { format: 'a3', orientation: 'portrait' }
-        };
-        html2pdf(areaCV, opt);
-    } else {
-        // html2pdf.js options
-        let opt = {
-            margin: 0,
-            filename: 'myResumeCV-light.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 4, useCORS: true },
-            jsPDF: { format: 'a3', orientation: 'portrait' }
-        };
-        html2pdf(areaCV, opt);
-    }
+    let filename = document.body.classList.contains(darkTheme) 
+        ? 'myResumeCV-dark.pdf' 
+        : 'myResumeCV-light.pdf';
+
+    // html2pdf.js options for a continuous PDF without page breaks
+    let opt = {
+        margin: 0,
+        filename: filename,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+            scale: 4, 
+            useCORS: true,
+            scrollX: 0,
+            scrollY: 0
+        },
+        jsPDF: {
+            unit: 'pt', 
+            format: 'a4', 
+            orientation: 'portrait',
+            compressPDF: true,
+        },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+    html2pdf().from(areaCV).set(opt).save();
 }
 
 // Action executed by clicking on the button => generation of the final PDF CV CV
