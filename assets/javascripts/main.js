@@ -92,6 +92,7 @@ function enableDarkMode() {
     themeButton.classList.add('fa-sun');
     themeButton.classList.remove('fa-moon');
     localStorage.setItem("dark-mode", "enabled");
+    document.getElementById('area_cv').className = document.getElementById('area_cv').className + ' sm-dark-back';
 };
 
 function disableDarkMode() {
@@ -99,6 +100,7 @@ function disableDarkMode() {
     themeButton.classList.add('fa-moon');
     themeButton.classList.remove('fa-sun');
     localStorage.setItem("dark-mode", "disabled");
+    document.getElementById('area_cv').className = document.getElementById('area_cv').className.replace(' sm-dark-back', '');
 };
 
 if (darkMode === "enabled") {
@@ -118,13 +120,57 @@ themeButton.addEventListener("click", () => {
 
 const downloadButton = document.getElementById('download-button');
 
+// downloadButton.addEventListener('click', () => {
+//     if (document.body.classList.contains(darkTheme)) {
+//         downloadButton.href = "assets/pdf/myResumeCV-dark.pdf";
+//     } else {
+//         downloadButton.href = "assets/pdf/myResumeCV-light.pdf";
+//     }
+// });
+
 downloadButton.addEventListener('click', () => {
-    if (document.body.classList.contains(darkTheme)) {
-        downloadButton.href = "assets/pdf/myResumeCV-dark.pdf";
-    } else {
-        downloadButton.href = "assets/pdf/myResumeCV-light.pdf";
-    }
-});
+    
+    
+    
+    let filename = document.body.classList.contains(darkTheme)
+        ?'myResumeCV-dark.pdf'
+        : 'myResumeCV-light.pdf';
+
+    // html2pdf.js options for a continuous PDF without page breaks
+    let opt = {
+        margin: 0,
+        filename: filename,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+            scale: 5,
+            useCORS: true,
+            scrollX: 0,
+            scrollY: 0,
+        },
+        jsPDF: {
+            unit: 'in',
+            format: "a4",
+            orientation: 'portrait',
+        },
+    };
+
+    // html2pdf().from(areaCV).set(opt).save();
+    html2pdf().from(areaCV).set(opt).toPdf().get('pdf').then(function (pdf) {
+        // Create a Blob from the PDF
+        const blob = pdf.output('blob');
+        
+        // Create an object URL for the Blob
+        const url = URL.createObjectURL(blob);
+        
+        // Open the PDF in a new tab
+        window.open(url);
+        
+        // Optional: Clean up and revoke the object URL after some time
+        setTimeout(function () {
+            URL.revokeObjectURL(url);
+        }, 1000);
+    });
+})
 
 /* Reduce the size and print on an A4 sheet */
 
@@ -141,7 +187,8 @@ function removeScaleCV() {
 /* Generate PDF */
 
 // PDF generated area
-let areaCV = document.getElementById('area-cv');
+let areaCV = document.getElementById('area_cv');
+
 
 // Button
 let resumeButton = document.getElementById("resume-button");
@@ -153,7 +200,7 @@ function generateResume() {
 
     // html2pdf.js options for a continuous PDF without page breaks
     let opt = {
-        margin: [0.3, 0, 0, 0],
+        margin: 0,
         filename: filename,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
@@ -164,17 +211,27 @@ function generateResume() {
         },
         jsPDF: {
             unit: 'in',
-            format: [8.5, 11.9],
+            format: "a4",
             orientation: 'portrait',
-        },
-
-        pageBreak: {
-            mode: 'avoid',
-            threshold: 1000, // break after 1000 pixels
         },
     };
 
-    html2pdf().from(areaCV).set(opt).save();
+    // html2pdf().from(areaCV).set(opt).save();
+    html2pdf().from(areaCV).set(opt).toPdf().get('pdf').then(function (pdf) {
+        // Create a Blob from the PDF
+        const blob = pdf.output('blob');
+        
+        // Create an object URL for the Blob
+        const url = URL.createObjectURL(blob);
+        
+        // Open the PDF in a new tab
+        window.open(url);
+        
+        // Optional: Clean up and revoke the object URL after some time
+        setTimeout(function () {
+            URL.revokeObjectURL(url);
+        }, 1000);
+    });
 }
 
 // Action executed by clicking on the button => generation of the final PDF CV CV

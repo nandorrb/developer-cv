@@ -327,6 +327,9 @@ img {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+    #area_cv {
+        padding: 0 25px;
+    }
 }
 
 .nav_logo,
@@ -783,3 +786,8 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 } */
+
+
+.sm-dark-back {
+    background-color: #2B2B2B;
+}
