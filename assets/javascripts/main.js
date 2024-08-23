@@ -129,9 +129,7 @@ const downloadButton = document.getElementById('download-button');
 // });
 
 downloadButton.addEventListener('click', () => {
-    
-    
-    
+
     let filename = document.body.classList.contains(darkTheme)
         ?'myResumeCV-dark.pdf'
         : 'myResumeCV-light.pdf';
